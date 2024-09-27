@@ -31,6 +31,15 @@ public class HashMapExample {
             System.out.println(key+": "+value);
         }
 
+        // iterate over keys
+        for (char key: map.keySet()) {
+            System.out.println(key);
+        }
+        // iterate over values
+        for (int value: map.values()) {
+            System.out.println(value);
+        }
+
         // size
         int size = map.size();
         System.out.println(size);
