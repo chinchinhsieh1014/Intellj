@@ -32,7 +32,7 @@ public class HashMapExample {
         }
 
         // iterate over keys
-        for (char key: map.keySet()) {
+        for (String key: map.keySet()) {
             System.out.println(key);
         }
         // iterate over values

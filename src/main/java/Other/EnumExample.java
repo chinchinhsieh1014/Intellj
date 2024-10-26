@@ -1,4 +1,4 @@
-package note;
+package Other;
 
 import java.util.Random;
 
