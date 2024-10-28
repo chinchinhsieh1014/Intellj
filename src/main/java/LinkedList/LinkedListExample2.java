@@ -3,7 +3,7 @@ package note;
 import java.util.LinkedList;
 import java.util.ListIterator;
 
-public class LinkedListExample {
+public class LinkedListExample2 {
     public static void main(String[] args) {
         LinkedList<String> placeToVisit = new LinkedList<>();
 
