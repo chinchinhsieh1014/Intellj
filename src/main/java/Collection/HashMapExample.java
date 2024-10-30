@@ -39,6 +39,8 @@ public class HashMapExample {
         for (int value: map.values()) {
             System.out.println(value);
         }
+        // get a list of values
+        List<Integer> values = new ArrayList<>(map.values());
 
         // size
         int size = map.size();
