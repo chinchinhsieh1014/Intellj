@@ -1,7 +1,6 @@
-package note;
+package Other;
 
 import java.util.LinkedList;
-import java.util.ListIterator;
 
 public class LinkedListExample {
     public static void main(String[] args) {

@@ -11,10 +11,10 @@ interface sayHello {
         System.out.println("This is a static method");
     }
 }
-public class functionalInterfaceExample {
-    public static void main(String[] args) {
-        sayHello LambdaExample = () -> System.out.println("hello");
-        LambdaExample.hello();
-        LambdaExample.defaultMethod();
-    }
-}
+//publiclass functionalInterfaceExample {
+//    public static void main(String[] args) {
+//        sayHello LambdaExample = () -> System.out.println("hello");
+//        LambdaExample.hello();
+//        LambdaExample.defaultMethod();
+//    }
+//}
