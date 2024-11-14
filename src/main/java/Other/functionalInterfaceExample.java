@@ -3,7 +3,9 @@ package Other;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 import java.util.function.BiConsumer;
+import java.util.function.Supplier;
 
 @FunctionalInterface
 interface sayHello {
@@ -74,10 +76,25 @@ public class functionalInterfaceExample {
         System.out.println("---");
         lists.removeIf(s -> s.startsWith("e"));
         lists.forEach(s -> System.out.println(s));
+        System.out.println("---");
+        lists.replaceAll(s -> s.charAt(0) + "-" + s.toUpperCase());
+        lists.forEach(s -> System.out.println(s));
 
-        // function
-        System.out.println("--- Function ---");
-        
+        // array
+        System.out.println("--- Array ---");
+        String[] emptyStrings = new String[10];
+        System.out.println(Arrays.toString(emptyStrings));
+        Arrays.fill(emptyStrings, " ");
+        System.out.println(Arrays.toString(emptyStrings));
+        Arrays.setAll(emptyStrings, (i) ->""+(i+1)+".");
+        System.out.println(Arrays.toString(emptyStrings));
+
+        // Supplier
+        System.out.println("--- Supplier ---");
+        String[] name = {"A", "B", "C", "D", "E", "F"};
+        Random random = new Random();
+        String[] randomList = randomlySelectedValues(15, name, () -> random.nextInt(name.length));
+        System.out.println(Arrays.toString(randomList));
 
         // comparator
         System.out.println("--- Comparator ---");
@@ -93,4 +110,13 @@ public class functionalInterfaceExample {
     public static <T> void processPoint(T t1, T t2, BiConsumer<T, T> consumer) {
         consumer.accept(t1, t2);
     }
+
+    public static String[] randomlySelectedValues(int count, String[] values, Supplier<Integer> s) {
+        String[] selectedValues = new String[count];
+        for (int i = 0; i < count; i++) {
+            selectedValues[i] = values[s.get()];
+        }
+        return selectedValues;
+    }
+
 }
